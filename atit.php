@@ -1,10 +1,6 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 
@@ -29,16 +25,28 @@
         </tr>
     </table>
     <script>
-const search = ()=>{
-    let filter=document.getElementById('search');
-    let table=document.getElementById('table');
-    let tr=table.getElementsByTagName('tr');
-    for (var i = 0; i < tr.length; i++) {
-        let td=tr[i].getElementsByTagName('td')[0];
-        if()
-    }
+    const search = () => {
+        let filter = document.getElementById('search').value.toUpperCase();
+        let table = document.getElementById('table');
 
-}
+        let tr = document.getElementsByTagName('tr');
+
+        for (var i = 0; i < tr.length; i++) {
+            let match = tr[i].getElementsByTagName('td')[0];
+            if (match) {
+
+                let textval = match.textContent || match.innerHTML
+
+                if (textval.toUpperCase().indexOf(search) > -1) {
+                    tr[i].style.display = ""
+                } else {
+                    tr[i].style.display = "none"
+
+                }
+            }
+
+        }
+    }
     </script>
 </body>
 

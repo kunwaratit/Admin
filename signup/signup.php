@@ -1,4 +1,5 @@
-<div class="signup-container" style="border:1px solid black ; width:fit-content; padding: 10px; display:flex;margin:auto">
+<div class="signup-container"
+    style="border:1px solid black ; width:fit-content; padding: 10px; display:flex;margin:auto">
     <form action="process_signup.php" method="POST">
         Full Name<br>
         <input type="text" placeholder="FirstName" name="firstname">
@@ -22,6 +23,6 @@
         <input type="number" name="weight">
         Profile<br>
         <input type="file" name="profile" id=""><br>
-        <input type="submit" value="Submit" name="submit">
+        <input class="submit" type="submit" value="Submit" name="submit">
     </form>
 </div>

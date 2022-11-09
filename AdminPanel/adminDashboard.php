@@ -1,38 +1,35 @@
 <?php
-session_start();
-require_once('connect.php');
-require_once("./template/central.php");
-require_once("leftnavitems.php");
-require_once("./template/rightContainer.php"); ?>
+require_once("./admintemplate/admincentral.php");
+require_once("../leftnavitemsn.php"); ?>
+<style>
 
-<script>
-document.getElementById('dashboard').style.display = "none";
-</script>
+</style>
 <div class="content-available-banks">
     <div class="content-available-banks-hold">
 
-        <h1> Blood Banks and Contact</h1>
+        <h1> Dashboard</h1>
 
-        Search<input type="search" name="" id="" placeholder="Blood bank">
-        <input type="search" name="" id="" placeholder="City">
 
         <?php
-
-        $getbankquery = "SELECT *  FROM bloodbankdetails";
-        $getbankqueryfire = mysqli_query($con, $getbankquery);
-        $num = mysqli_num_rows($getbankqueryfire);
+        require_once('../connect.php');
+        $bloodgroupquery = "SELECT *  FROM bloodgroup";
+        $bloodgroupqueryfire = mysqli_query($con, $bloodgroupquery);
+        $num = mysqli_num_rows($bloodgroupqueryfire);
         if ($num > 0) {
-            while ($bankinfo = mysqli_fetch_array($getbankqueryfire)) {
+            while ($bloodgroupinfo = mysqli_fetch_array($bloodgroupqueryfire)) {
         ?>
         <div class="tables">
+
             <span name="bankname" id="bankname">
-                <?php echo $bankinfo['BloodbankName'] ?>
+                <h3>
+                    <?php echo $bloodgroupinfo['Group Name'] ?>
+                </h3>
             </span><br>
             <span id="bankaddress">
-                <?php echo $bankinfo['Location'] ?>
+                <?php echo $bloodgroupinfo['unit'] ?>
             </span><br>
-            <span id="banktel"><a href="tel:<?php echo $bankinfo['BloodbankName'] ?>">
-                    <?php echo $bankinfo['Contact'] ?>
+            <span id="banktel"><a href="tel:<?php echo $bloodgroupinfo['vol'] ?>">
+                    <?php echo $bloodgroupinfo['vol'] ?>
                 </a></span>
         </div>
         <?php }
@@ -48,15 +45,16 @@ document.getElementById('dashboard').style.display = "none";
         }
 
         .content-available-banks .tables {
-            box-shadow: -4px -4px 6px inset rgb(255, 234, 234);
+            box-shadow: -4px -4px 8px inset rgba(255, 255, 255, 0.66);
             padding: 15px;
             margin: 5px;
             letter-spacing: 1px;
             font-size: x-large;
             display: inline-block;
-            min-width: 20vw;
+            min-width: 16vw;
             width: fit-content;
             min-height: 7vw;
+            background-color: #071126e3;
         }
 
         .content-available-banks .tables #bankname {
@@ -74,16 +72,13 @@ document.getElementById('dashboard').style.display = "none";
             font-family: "Roboto", sans-serif;
             font-size: 14px;
             font-weight: lighter;
-            color: #ffc821;
+            color: green;
         }
 
         #banktel a {
-            color: rgba(0, 255, 219, 0.84);
+            color: rgba(82, 83, 82, 0.842);
 
             font-size: medium;
             text-decoration: underline;
         }
         </style>
-    </div>
-</div>
-<?php require_once("template/leftcontainer.php"); ?>

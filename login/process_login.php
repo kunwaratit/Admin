@@ -10,24 +10,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $queryfire = mysqli_query($con, $query);
     $users = mysqli_fetch_array($queryfire);
     $count = mysqli_num_rows($queryfire);
+
     if ($count == 1) {
         if ($users['password'] == $enterpassword) {
-            session_start();
-            $user = $users['phone'];
-            $infoquery = "SELECT * FROM userprofile where phone= '$user'";
-            $infoqueryfire = mysqli_query($con, $infoquery);
-            $info = mysqli_fetch_array($infoqueryfire);
-            $_SESSION['address'] = $info['address'];
-            $_SESSION['phone'] = $info['phone'];
-            $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = $users['username'];
-            $_SESSION['user_id'] = $users['user_id'];
+            if ($users["usertype"] == "user") {
+                session_start();
+                $user = $users['phone'];
+                $infoquery = "SELECT * FROM userprofile where phone= '$user'";
+                $infoqueryfire = mysqli_query($con, $infoquery);
+                $info = mysqli_fetch_array($infoqueryfire);
+                $_SESSION['address'] = $info['address'];
+                $_SESSION['phone'] = $info['phone'];
+                $_SESSION['photo'] = $info['Photo'];
 
-            header('location:../dashboard.php');
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $users['username'];
+                $_SESSION['user_id'] = $users['user_id'];
+
+                header('location:../dashboard.php');
+            } else if ($users["usertype"] == "admin") {
+                header('location:../Adminpanel/adminDashboard.php');
+            } else {
+                header('location:../dashboard.php');
+            }
         } else {
+
             header('location:../dashboard.php');
         }
     } else {
+        echo "hello";
         header('location:../dashboard.php');
     }
 } ?>

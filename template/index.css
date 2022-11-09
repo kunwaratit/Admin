@@ -1,0 +1,25 @@
+.dashtable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    text-align: left;
+    box-shadow: 0 0 15px rgb(37, 77, 50);
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+
+.dashtable thead tr {
+    border-top-left-radius: 5px;
+    background-color: rgb(12, 158, 60);
+    color: white;
+    min-width: 400px;
+}
+
+.dashtable th,
+.dashtable td {
+    padding: 10px 10px;
+}
+
+.dashtable tr {
+    border-bottom: 1px solid grey;
+}

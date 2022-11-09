@@ -29,6 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $addUser = $fname . $fetchuser['lastnum'];
             $username = $fname . ' ' . $lname;
             $userid = "INSERT INTO `user_login`(`username`,`user_id`, `phone`, `password`, `email_id`) VALUES ('$username','$addUser',$phone,'$password','$email')";
+
+
+            $queryuserid = "UPDATE userprofile set user_id='$addUser' where phone=$phone";
+            $queryuseridfire = mysqli_query($con, $queryuserid);
+
             $useridfire = mysqli_query($con, $userid);
             header('location:../dashboard.php');
         }
