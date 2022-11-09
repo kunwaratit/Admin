@@ -41,6 +41,15 @@ require_once("./template/central.php");
                 width: 160px;
                 margin: 8px;
             }
+
+            @media (max-width:360px) {
+                .userInfo {
+                    width: 100%;
+                    margin: auto 2rem 0.25rem 0rem;
+                }
+            }
+
+          
             </style>
             <div class="userInfo"><a>
                     <div>Donation made

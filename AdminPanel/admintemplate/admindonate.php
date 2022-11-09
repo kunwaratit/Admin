@@ -1,8 +1,5 @@
 <?php
-session_start();
-
-
-require_once('./connect.php');
+require_once('./connectadmin.php');
 
 if (isset($_POST['donate'])) {
 
@@ -16,13 +13,6 @@ if (isset($_POST['donate'])) {
         echo "$hospitalid";
     }
 }
-?>
-<?php
-require_once('connect.php');
-
-require_once("./template/central.php");
-require_once("leftnavitems.php");
-
 ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

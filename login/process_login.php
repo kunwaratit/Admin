@@ -22,13 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['address'] = $info['address'];
                 $_SESSION['phone'] = $info['phone'];
                 $_SESSION['photo'] = $info['Photo'];
-
+                $_SESSION['usertype'] = $users["usertype"];
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $users['username'];
                 $_SESSION['user_id'] = $users['user_id'];
 
                 header('location:../dashboard.php');
             } else if ($users["usertype"] == "admin") {
+                session_start();
+                $_SESSION['usertype'] = $users["usertype"];
                 header('location:../Adminpanel/adminDashboard.php');
             } else {
                 header('location:../dashboard.php');

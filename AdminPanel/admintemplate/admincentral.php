@@ -17,7 +17,7 @@
 
             <a href="adminDashboard.php">
                 <li> Home</li>
-            </a> <a href="./admintemplate/adminContact.php">
+            </a> <a href="./adminContact.php">
                 <li>Contact</li>
             </a> <a href="http://">
                 <li>Aboout Us</li>
