@@ -122,8 +122,6 @@
                     margin: 0vw 6vw;
 
 
-                    flex-wrap: wrap;
-                    width: 100%;
 
                 }
 
@@ -207,10 +205,10 @@ background: url(./web\ background.png)
 
                 .wrapper {
                     display: flex;
-                    flex-wrap: wrap;
-                    width: 100%;
+
 
                 }
+
 
                 .wrap {
 

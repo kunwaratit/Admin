@@ -1,10 +1,9 @@
-<?php 
-	require 'config.php';
+<?php
+require 'config.php';
 
-	$helper = $fb->getRedirectLoginHelper();
+$helper = $fb->getRedirectLoginHelper();
 
-	$permissions = ['email', 'publish_actions']; // Optional permissions
-	$loginUrl = $helper->getLoginUrl('http://tutorials.lcl/facebook/callback.php', $permissions);
+$permissions = ['email', 'publish_actions']; // Optional permissions
+$loginUrl = $helper->getLoginUrl('http://tutorials.lcl/facebook/callback.php', $permissions);
 
-	header("location:" . $loginUrl);
- ?>
+header("location:" . $loginUrl);

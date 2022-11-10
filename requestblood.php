@@ -25,17 +25,17 @@ require_once("leftnavitems.php");
             $file = $_FILES['file'];
             require 'Facebook/autoload.php';
             $fb = new Facebook\Facebook([
-                'app_id' => '55274788298180', // Replace {app-id} with your app id
+                'app_id' => '552747882981804', // Replace {app-id} with your app id
                 'app_secret' => '4d6de77ab056b149c81efde176628a85', // Replace {app_secret} with your app secret
                 'default_graph_version' => 'v2.11',
             ]);
-            $linkdata = ['message' => 'Patient Name : ' . $_POST['name'] . 'Location : ' . $_POST['currentlocation'] . 'Contact : ' . $_POST['contact1'] . $_POST['contact2'] . 'Hospital : ' . $_POST['hospital'], 'source' => $fb->fileToUpload($_FILES['file']["tmp_name"]),];
+            $linkdata = ['message' => 'Patient Name : ' . $_POST['name'] . 'Location : ' . $_POST['currentlocation'] . 'Contact : ' . $_POST['contact1'] . 'Hospital : ' . $_POST['hospital'], 'source' => $fb->fileToUpload($_FILES['file']["tmp_name"]),];
             try {
                 // Returns a `Facebook\FacebookResponse` object
                 $response = $fb->post(
                     '/me/photos',
                     $linkdata,
-                    'EAAH2uKU3KawBAAzRxelPZCAKUXEtmVNMeTtD2ePwBMCOpZA9LHA0jIU0kZCnkMBtEaHu724vjgeIfucQRzT0HCII9v5FioJDVKZAExsxHBZAnWBQPxbmUnfZArw7ZBotyDsWuosdDpoinKdWB8XgV93nfBRWmyxDzv0Bspn42mIJU2e896gZBB2d4xJW6LK91bgZD'
+                    'EAAH2uKU3KawBAG4bAmMbmZBH1ZBE3NcGiMFAo3vpgDgSDc7tDuhPOkIoL4SpcevfhcJdSjbXnlPpmunXharBOYKCBr240jtAq4YBda3k8buCFyjzNUaUfYYte7f714KkSG0wZBZCjUnY6xbnNS3UOxat3dQSsEWHZBoIHOHElicOaSyDaZBeT5AVUIuv7JYr4w1v0A15GJIamLRXqMWRKKz2U4ghNT94YZD'
                 );
             } catch (Facebook\Exceptions\FacebookResponseException $e) {
                 echo 'Graph returned an error: ' . $e->getMessage();
@@ -45,8 +45,7 @@ require_once("leftnavitems.php");
                 exit;
             }
 
-            $patientQuery = "
-            INSERT INTO `requestedblood`(`user_id`,`patientname`, `currentlocation`, `contact`,`hospital`) VALUES ('$_SESSION[user_id]','$name','$location','$contact','$hospital')";
+            $patientQuery = "INSERT INTO `requestedblood`(`user_id`,`patientname`, `currentlocation`, `contact`,`hospital`) VALUES ('$_SESSION[user_id]','$name','$location','$contact','$hospital')";
 
             $patientQueryfire = mysqli_query($con, $patientQuery);
         }
@@ -61,7 +60,7 @@ require_once("leftnavitems.php");
                         <label for="message-text" class="control-label">Patient Name:<br></label>
                         <input type="text" id="msg" name="name"> <br>
                         Current Location<br><input type="text" name="currentlocation"><br>
-                        Contact<br> <input type="text" name="contact1">,<br><input type="text" name="contact2"><br>
+                        Contact<br> <input type="text" name="contact1"><br>
                         Hospital<br><input type="text" name="hospital"><br>
                         <p class="help-block">Hospital reffered doc <input type="file" id="file" name="file"><br>
                         </p>

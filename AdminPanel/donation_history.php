@@ -17,38 +17,35 @@ require_once("../leftnavitemsn.php"); ?><div class="tables">
         </thead>
 
         <?php
-        $query = "SELECT * from userprofile 
-        RIGHT JOIN donationrequest
-        ON userprofile.user_id=donationrequest.user_id
-        ";
+        $query = "SELECT * from userprofile as u RIGHT JOIN donationrequest as d ON u.user_id=d.user_id";
         $queryfire = mysqli_query($con, $query);
         $rows = mysqli_num_rows($queryfire);
         if ($rows > 0) {
             while ($queryfetch = mysqli_fetch_array($queryfire)) {
 
+
         ?>
-        <tr>
-            <td> </td>
-            <td><?php echo $queryfetch['firstName'] . " " . $queryfetch['lastName']; ?></td>
-            <td><img src="../clipboard.png" alt="" srcset="" height="35px"></td>
-            <td><?php echo $queryfetch['bloodGroup'] ?></td>
-            <td>1200 <span style="font-size:9px ;">cubic.</span> </td>
-            <td>Kathmandu</td>
-            <td><?php echo $queryfetch['phone'] ?></td>
-            <td>
-                <input type="submit" value="<?php echo $queryfetch['action']; ?>"
-                    id="status_<?php echo $queryfetch['action']; ?>" class="submit edit">
+                <tr>
+                    <td> </td>
+                    <td><?php echo $queryfetch['firstName'] . " " . $queryfetch['lastName']; ?></td>
+                    <td><img src="../clipboard.png" alt="" srcset="" height="35px"></td>
+                    <td><?php echo $queryfetch['bloodGroup'] ?></td>
+                    <td>1200 <span style="font-size:9px ;">cubic.</span> </td>
+                    <td></td>
+                    <td><?php echo $queryfetch['phone'] ?></td>
+                    <td>
+                        <input type="submit" value="<?php echo $queryfetch['action']; ?>" id="status_<?php echo $queryfetch['action']; ?>" class="submit edit">
 
-            </td>
+                    </td>
 
-        </tr><?php }
+                </tr><?php }
                 }
                         ?>
         <style>
-        tr td:first-child::before {
-            counter-increment: Serial;
-            content: "  "counter(Serial)".";
-        }
+            tr td:first-child::before {
+                counter-increment: Serial;
+                content: "  "counter(Serial)".";
+            }
         </style>
     </table>
 </div>

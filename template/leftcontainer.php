@@ -70,10 +70,11 @@
                 <div>Donated: <span>25 sept,2020</span></div>
                 <div>Status:Active</div>
 
-               
+
             </div>
 
-            <button><a href="./template/logout.php" style="background-color:rgb(255, 255, 255); color:#d61b1b">Log Out</a></button>
+            <button><a href="./template/logout.php" style="background-color:rgb(255, 255, 255); color:#d61b1b">Log
+                    Out</a></button>
         </div>
 
         <div>
@@ -81,15 +82,20 @@
             <div class="login-wrapper">
                 <h1> <a href="../Admin/signup/signup.php"> WANT TO DONATE? <br> Signup</a></h1>
                 <div class="signup-container"
-                    style="background:white; border:1px solid black ; width:fit-content; padding: 10px; display:flex;margin:auto"> 
+                    style="background:white; border:1px solid black ; width:fit-content; padding: 10px; display:flex;margin:auto">
                     <form action="../Admin/login/process_login.php" method="POST">
-                     <h2 style="text-align:center; text-decoration: underline;"> Login</h2>
-                       <br><span class="log"> UserId- </span><br><input type="text" name="entered_id" placeholder="UserId" title="userid/number/email">
-                        <br><span class="log"> Password</span><br><input type="text" name="entered_pass" placeholder="Password" title="password"><br>
+                        <h2 style="text-align:center; text-decoration: underline;"> Login</h2>
+                        <br><span class="log"> UserId- </span><br><input type="text" name="entered_id"
+                            placeholder="UserId" title="userid/number/email">
+                        <br><span class="log"> Password</span><br><input type="password" name="entered_pass"
+                            placeholder="Password" title="password"><br>
                         <input class="submit" type="submit" value="Submit">
-                     </form><style> .log {
-                        color: aqua;
-                    }</style>
+                    </form>
+                    <style>
+                        .log {
+                            color: aqua;
+                        }
+                    </style>
                 </div>
             </div>
 

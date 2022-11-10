@@ -9,8 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phone = $_POST['phoneno'];
     $bloodgroup = $_POST['bloodGroup'];
     $weight = $_POST['weight'];
+    $sex = $_POST['sex'];
     $age = $_POST['age'];
     $profile = $_POST['profile'];
+    $cover = $_POST['cover'];
     $password = $_POST['password'];
     $email = $_POST['email'];
     $selectuser = "SELECT * from user_login where phone='$phone' and email_id='$email' ";
@@ -19,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $count = mysqli_num_rows($userfire);
 
     if ($count == 0) {
-        $query = "INSERT INTO `userprofile`( `firstName`, `lastName`, `address`, `Gender`, `dateOfBirth`, `Age`,`phone`, `bloodGroup`, `Photo`) VALUES ('$fname','$lname','$address','male',$dob,$age,$phone,'$bloodgroup','$profile')";
+        $query = "INSERT INTO `userprofile`( `firstName`, `lastName`, `address`, `Gender`, `phone`, `bloodGroup`, `profilePhoto`, `coverPhoto`) VALUES ('$fname','$lname','$address','$sex',$phone,'$bloodgroup','$profile','$cover')";
         $queryfire = mysqli_query($con, $query);
         if ($queryfire) {
             //userid

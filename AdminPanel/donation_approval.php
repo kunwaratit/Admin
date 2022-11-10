@@ -14,10 +14,10 @@ if (isset($_GET['action'])) {
         $count = mysqli_num_rows($queryfire);
 
         if ($count == 0) {
-            $sql = "INSERT into  donordetails (`user_id`,`total_unit`) VALUES ('$_GET[userid]','1')";
+            $sql = "INSERT into  donordetails (`user_id`,`total_times`) VALUES ('$_GET[userid]','1')";
             $sqlfire = mysqli_query($con, $sql);
         } else {
-            $sql = "UPDATE  donordetails set total_unit=total_unit+1 where user_id='$_GET[userid]'";
+            $sql = "UPDATE  donordetails set total_times=total_times+1  where user_id='$_GET[userid]'";
             $sqlfire = mysqli_query($con, $sql);
         }
     } else if (($_GET['action']) == "decline") {
@@ -192,16 +192,17 @@ if (isset($_GET['action'])) {
         <thead>
             <th style="width:47px;">S.N</th>
             <th>Name</th>
-            <th style="width:90px;">Photo</th>
+
             <th style=" width:90px;">Group</th>
             <th style="width:90px;">Unit</th>
             <th>Address</th>
             <th style="width:125px; ">Contact No.</th>
+
             <th colspan="">Action</th>
         </thead>
         <?php
         $query = "SELECT * from userprofile 
-        RIGHT JOIN donationrequest
+        RIGHT JOIN donationrequest 
         ON userprofile.user_id=donationrequest.user_id where action='pending'";
         $queryfire = mysqli_query($con, $query);
         $rows = mysqli_num_rows($queryfire);
@@ -217,27 +218,27 @@ if (isset($_GET['action'])) {
                 <tr>
                     <td> </td>
                     <td>
-                        <?php echo $queryfetch['firstName'] . " " . $queryfetch['lastName']; ?>
+                        <img src="../clipboard.png" alt="" srcset="" height="35px"> <?php echo $queryfetch['firstName'] . " " . $queryfetch['lastName']; ?>
                     </td>
-                    <td><img src="../clipboard.png" alt="" srcset="" height="35px"></td>
+
                     <td>
                         <?php echo $queryfetch['bloodGroup'] ?>
                     </td>
-                    <td>1200 <span style="font-size:9px ;">cubic.</span> </td>
-                    <td>Kathmandu</td>
+                    <td>450 <span style="font-size:9px ;">ml.</span> </td>
                     <td>
                         <?php echo $queryfetch['phone'] ?>
                     </td>
+                    <td></td>
                     <td>
                         <a href="donation_approval.php?action=approve&id=<?php echo $queryfetch['id']; ?>&userid=<?php echo $queryfetch['user_id']; ?>">
                             <input type="submit" value="Approve" class="submit edit" id="accept" name="action" class="accept">
                         </a>
                         <a href="donation_approval.php?action=decline&id=<?php echo $queryfetch['id']; ?>"> <input type="submit" value="Decline" class="submit delete" id="delete">
                         </a>
-                    </td>
-                    <td><a href="donation_approval.php?action=edit&id=<?php echo $queryfetch['id']; ?>">
+                        <a href="donation_approval.php?action=edit&id=<?php echo $queryfetch['id']; ?>">
                             <img src="./admintemplate/edit.png" height="25px"></a>
                     </td>
+
                 </tr>
         <?php }
         }

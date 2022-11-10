@@ -10,12 +10,14 @@
 
             <div class="wrap"> <a href="#" onclick="alert('Sorry!Only available to Admin');">
                     <div class="available-bloods">Available Bloods <br>
-                        <i class="fa-solid fa-fill-drip" style="position: relative;margin-top: -5px; font-size:230%; color:rgba(255, 181, 181, 0.705);"></i>
+                        <i class="fa-solid fa-fill-drip"
+                            style="position: relative;margin-top: -5px; font-size:230%; color:rgba(255, 181, 181, 0.705);"></i>
                     </div>
                     <div class="details">view details</div>
                 </a>
             </div>
-            <div class=" wrap"> <?php if ((!isset($_SESSION['loggedin'])) || ($_SESSION['loggedin'] == false)) {
+            <div class=" wrap">
+                <?php if ((!isset($_SESSION['loggedin'])) || ($_SESSION['loggedin'] == false)) {
                                 ?> <a href='./login/login.php'>
                     <?php } else {
                     ?><a href="donateblood.php">
@@ -26,7 +28,7 @@
 
                     <div class=" details">details
                         </div>
-                        </a>
+                    </a>
             </div>
             <div class="wrap">
                 <?php if ((!isset($_SESSION['loggedin'])) || ($_SESSION['loggedin'] == false)) {
@@ -37,7 +39,7 @@
                         <div class="reqblood">Request Blood<i class="fa-solid fa-syringe" style="font-size:250%; "></i>
                         </div>
                         <div class="details">details</div>
-                        </a>
+                    </a>
             </div>
             <div class="wrap"><a href="bloodbank.php">
                     <div class="bloodbank">Blood Banks<i class="bi bi-bank" style="font-size:250%; "></i></div>
@@ -45,7 +47,9 @@
                 </a>
             </div>
             <div class="wrap"><a href="#" onclick="alert('Sorry!Only available to Admin')">
-                    <div class="bloodbank"> Donors List<i class="fa-solid fa-users " style="font-size:250%; "> <i class="fa-solid fa-plus" style="font-size:50%; margin-left:-10px;margin-top: -10px"></i></i>
+                    <div class="bloodbank"> Donors List<i class="fa-solid fa-users " style="font-size:250%; "> <i
+                                class="fa-solid fa-plus"
+                                style="font-size:50%; margin-left:-10px;margin-top: -10px"></i></i>
 
 
 

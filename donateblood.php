@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 </style>
 
-<div class="form wrapper ">
+<div class="form wrapper " style="width:auto; ">
     <div class="form donate">
 
         <form action="" method="post">
@@ -139,9 +139,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         <?php }
                         } ?>
-                    </select> <br>Location: <input type="text" value=""><br>
-                    Blood-Unit:<input type="text" name=""><br>
-                    Last Donated: <input type="text" name="donation"><br>
+                    </select> <br>
+                    Blood-Unit:<input type="text" name="" value="450ml" disabled><br>
+
                     <input class=" submit" type="submit" value="submit" name="donate">
             </div>
             <p class="quest"></p>
