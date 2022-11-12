@@ -31,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else if ($users["usertype"] == "admin") {
                 session_start();
                 $_SESSION['usertype'] = $users["usertype"];
+
+                $_SESSION['log'] = true;
                 header('location:../Adminpanel/adminDashboard.php');
             } else {
                 header('location:../dashboard.php');

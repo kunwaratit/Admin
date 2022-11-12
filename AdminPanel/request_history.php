@@ -1,4 +1,5 @@
 <?php
+
 require_once("../connect.php");
 require_once("./admintemplate/admincentral.php");
 require_once("../leftnavitemsn.php"); ?>
@@ -13,7 +14,7 @@ tr td:first-child::before {
 </style>
 
 <div class="tables">
-    <h1> Requested Blood</h1>
+    <h1> Request History</h1>
     <table class="dashtable">
         <thead>
             <tr>
@@ -22,7 +23,7 @@ tr td:first-child::before {
                 <th>Current Location</th>
                 <th style="width:140px; ">Contact</th>
                 <th>Hospital</th>
-                <th>Report</th>
+
                 <th>Status</th>
             </tr>
         </thead>
@@ -34,7 +35,7 @@ tr td:first-child::before {
                 <td>kathmandu</td>
                 <td>9842803777</td>
                 <td>teaching</td>
-                <td>report.jpg</td>
+                <!--  <td>report.jpg</td>-->
                 <td>
                     <input type="submit" value="Edit" class="submit edit" id="edit" onclick="editer()">
                 </td>
@@ -73,11 +74,11 @@ tr td:first-child::before {
 
                 <?php echo $reqbloodinfo['hospital'] ?>
             </td>
-            <td>
+            <!-- <td>
 
                 <?php //echo $reqbloodinfo['patientreport'] 
-                        ?>
-            </td>
+                ?>
+            </td>-->
             <td>
                 <a href=""><input type="submit" value="<?php echo $reqbloodinfo['action']; ?>"
                         id="status_<?php echo $reqbloodinfo['action']; ?>" class="submit edit"></a>

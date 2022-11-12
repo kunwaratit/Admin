@@ -29,23 +29,24 @@ if (isset($_GET['action'])) {
 }
 ?>
 <div class="tables">
-    <h1>Approval</h1>
+    <h1> Donation Approval</h1>
 
 
-    <a href="#" style="color:blue ; text-decoration:underline;" id="add">Add New</a>
+    <!--  <a href="#" style="color:blue ; text-decoration:underline;" id="add">Add New</a>
+-->
     <script>
-        var id = document.getElementById("add");
+    var id = document.getElementById("add");
 
-        id.addEventListener("click", function() {
-            var addnew = document.getElementById("addnew");
-            addnew.style.display = "block";
-        });
+    id.addEventListener("click", function() {
+        var addnew = document.getElementById("addnew");
+        addnew.style.display = "block";
+    });
     </script>
     <style>
-        #addnew {
-            position: absolute;
-            display: none;
-        }
+    #addnew {
+        position: absolute;
+        display: none;
+    }
     </style>
     <div id="addnew">
         <?php
@@ -68,55 +69,55 @@ if (isset($_GET['action'])) {
         }
         ?>
         <style>
-            * {
-                font-family: cursive;
-            }
+        * {
+            font-family: cursive;
+        }
 
-            .donate div {
-                color: black;
-            }
+        .donate div {
+            color: black;
+        }
 
-            .donate {
-                border-radius: 5%;
-                background-color: #00506a;
-                ;
+        .donate {
+            border-radius: 5%;
+            background-color: #00506a;
+            ;
 
-                margin: 1em auto 0em 10em;
-                width: fit-content;
-                padding: 10px 10px;
-            }
+            margin: 1em auto 0em 10em;
+            width: fit-content;
+            padding: 10px 10px;
+        }
 
-            .donate h1 {
-                text-align: center;
-                text-decoration: underline;
-                margin-bottom: 15px;
-                color: rgb(170, 181, 245);
-                font-size: x-large;
-            }
+        .donate h1 {
+            text-align: center;
+            text-decoration: underline;
+            margin-bottom: 15px;
+            color: rgb(170, 181, 245);
+            font-size: x-large;
+        }
 
-            .donate hr {
-                color: aqua;
-                margin: 5px 0px;
-            }
+        .donate hr {
+            color: aqua;
+            margin: 5px 0px;
+        }
 
-            .quest {
-                color: rgba(255, 255, 255, 0.973);
-                font-weight: 800;
-            }
+        .quest {
+            color: rgba(255, 255, 255, 0.973);
+            font-weight: 800;
+        }
 
-            input[type="button"] {
-                background-color: aliceblue;
-                color: rgb(184, 11, 40);
-                border-radius: 8px;
-                padding: 2px;
-                font-weight: 500;
-            }
+        input[type="button"] {
+            background-color: aliceblue;
+            color: rgb(184, 11, 40);
+            border-radius: 8px;
+            padding: 2px;
+            font-weight: 500;
+        }
 
-            input[type="button"]:hover,
-            select:hover {
-                color: red;
-                background-color: rgb(200, 206, 211);
-            }
+        input[type="button"]:hover,
+        select:hover {
+            color: red;
+            background-color: rgb(200, 206, 211);
+        }
         </style>
 
         <div class="form wrapper ">
@@ -127,18 +128,18 @@ if (isset($_GET['action'])) {
                         <h1> Check the medical status</h1>
                         <p class="quest"> Do you have any of the following disease ?</p>
                         <style>
-                            .disease li {
-                                float: left;
-                                list-style-type: lower-alpha;
-                                margin: 6px;
-                                color: rgb(234, 197, 197);
-                                margin-left: 25px;
-                                font-size: 16px;
-                            }
+                        .disease li {
+                            float: left;
+                            list-style-type: lower-alpha;
+                            margin: 6px;
+                            color: rgb(234, 197, 197);
+                            margin-left: 25px;
+                            font-size: 16px;
+                        }
 
-                            .disease {
-                                height: 1.9em;
-                            }
+                        .disease {
+                            height: 1.9em;
+                        }
                         </style>
                         <ul class="disease">
                             <li>Blood Pressure</li>
@@ -155,7 +156,8 @@ if (isset($_GET['action'])) {
 
                             <select name="age" id="" style="background-color: aliceblue; color:rgb(184, 11, 40);">
                                 <option value="over18" style="color:rgb(184, 11, 40);">Over 18</option>
-                                <option value="under18" onclick="alert('Sorry! Not Eligible.');" style="color:rgb(184, 11, 40);">Under 18</option>
+                                <option value="under18" onclick="alert('Sorry! Not Eligible.');"
+                                    style="color:rgb(184, 11, 40);">Under 18</option>
                             </select>
                         </p>
                         <hr>
@@ -163,7 +165,8 @@ if (isset($_GET['action'])) {
                     </div>
                     <div class="">
                         <p class="quest">
-                            Hospital <select name="hospitalid" id="" style="background-color: aliceblue; color:rgb(184, 11, 40);width:250px">
+                            Hospital <select name="hospitalid" id=""
+                                style="background-color: aliceblue; color:rgb(184, 11, 40);width:250px">
                                 <?php
                                 $bankquery = "select bankid,Bloodbankname from bloodbankdetails";
                                 $bankqueryfire = mysqli_query($con, $bankquery);
@@ -172,9 +175,10 @@ if (isset($_GET['action'])) {
                                     while ($bankqueryfetch = mysqli_fetch_array($bankqueryfire)) {
                                         print_r($bankqueryfire);
                                 ?>
-                                        <option value=" <?php echo $bankqueryfetch['bankid']; ?>" style="color:rgb(184, 11, 40);">
-                                            <?php echo $bankqueryfetch['Bloodbankname']; ?>
-                                        </option>
+                                <option value=" <?php echo $bankqueryfetch['bankid']; ?>"
+                                    style="color:rgb(184, 11, 40);">
+                                    <?php echo $bankqueryfetch['Bloodbankname']; ?>
+                                </option>
 
                                 <?php }
                                 } ?>
@@ -192,10 +196,9 @@ if (isset($_GET['action'])) {
         <thead>
             <th style="width:47px;">S.N</th>
             <th>Name</th>
-
             <th style=" width:90px;">Group</th>
             <th style="width:90px;">Unit</th>
-            <th>Address</th>
+
             <th style="width:125px; ">Contact No.</th>
 
             <th colspan="">Action</th>
@@ -209,37 +212,39 @@ if (isset($_GET['action'])) {
         if ($rows > 0) {
             while ($queryfetch = mysqli_fetch_array($queryfire)) {
         ?>
-                <style>
-                    tr td:first-child::before {
-                        counter-increment: Serial;
-                        content: "  "counter(Serial)".";
-                    }
-                </style>
-                <tr>
-                    <td> </td>
-                    <td>
-                        <img src="../clipboard.png" alt="" srcset="" height="35px"> <?php echo $queryfetch['firstName'] . " " . $queryfetch['lastName']; ?>
-                    </td>
+        <style>
+        tr td:first-child::before {
+            counter-increment: Serial;
+            content: "  "counter(Serial)".";
+        }
+        </style>
+        <tr>
+            <td> </td>
+            <td>
+                <img src="../clipboard.png" alt="" srcset="" height="35px">
+                <?php echo $queryfetch['firstName'] . " " . $queryfetch['lastName']; ?>
+            </td>
+            <td>
+                <?php echo $queryfetch['bloodGroup'] ?>
+            </td>
+            <td>450 <span style="font-size:9px ;">ml.</span> </td>
+            <td>
+                <?php echo $queryfetch['phone'] ?>
+            </td>
 
-                    <td>
-                        <?php echo $queryfetch['bloodGroup'] ?>
-                    </td>
-                    <td>450 <span style="font-size:9px ;">ml.</span> </td>
-                    <td>
-                        <?php echo $queryfetch['phone'] ?>
-                    </td>
-                    <td></td>
-                    <td>
-                        <a href="donation_approval.php?action=approve&id=<?php echo $queryfetch['id']; ?>&userid=<?php echo $queryfetch['user_id']; ?>">
-                            <input type="submit" value="Approve" class="submit edit" id="accept" name="action" class="accept">
-                        </a>
-                        <a href="donation_approval.php?action=decline&id=<?php echo $queryfetch['id']; ?>"> <input type="submit" value="Decline" class="submit delete" id="delete">
-                        </a>
-                        <a href="donation_approval.php?action=edit&id=<?php echo $queryfetch['id']; ?>">
-                            <img src="./admintemplate/edit.png" height="25px"></a>
-                    </td>
+            <td>
+                <a
+                    href="donation_approval.php?action=approve&id=<?php echo $queryfetch['id']; ?>&userid=<?php echo $queryfetch['user_id']; ?>">
+                    <input type="submit" value="Approve" class="submit edit" id="accept" name="action" class="accept">
+                </a>
+                <a href="donation_approval.php?action=decline&id=<?php echo $queryfetch['id']; ?>"> <input type="submit"
+                        value="Decline" class="submit delete" id="delete">
+                </a>
+                <a href="donation_approval.php?action=edit&id=<?php echo $queryfetch['id']; ?>">
+                    <img src="./admintemplate/edit.png" height="25px"></a>
+            </td>
 
-                </tr>
+        </tr>
         <?php }
         }
         ?>

@@ -4,14 +4,14 @@ require_once("./admintemplate/admincentral.php");
 require_once("../leftnavitemsn.php");
 ?>
 <style>
-.form {
+    .form {
 
 
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9em;
-    width: 12em;
-}
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9em;
+        width: 12em;
+    }
 </style>
 
 <link rel="stylesheet" href="../template/index.css">
@@ -35,27 +35,27 @@ require_once("../leftnavitemsn.php");
         if ($num > 0) {
             while ($bankinfo = mysqli_fetch_array($queryfire)) {
     ?>
-    <form class=" form bankDetails" action="process_bankdetails.php" method="post">
-        Serial No. <input type="text" name="updateid" value="<?php echo $bankinfo['id'] ?>">
-        BloodBankName <input type="text" name="bloodbankname" value="<?php echo $bankinfo['BloodbankName'] ?>">
-        Contact<input type="text" name="contact" value="<?php echo $bankinfo['Contact'] ?>">
-        location<input type="text" name="location" value="<?php echo $bankinfo['Location'] ?>">
-        website<input type="text" name="website" value="<?php echo $bankinfo['website'] ?>">
+                <form class=" form bankDetails" action="process_bankdetails.php" method="post">
+                    Serial No. <input type="text" name="updateid" value="<?php echo $bankinfo['id'] ?>">
+                    BloodBankName <input type="text" name="bloodbankname" value="<?php echo $bankinfo['BloodbankName'] ?>">
+                    Contact<input type="text" name="contact" value="<?php echo $bankinfo['Contact'] ?>">
+                    location<input type="text" name="location" value="<?php echo $bankinfo['Location'] ?>">
+                    website<input type="text" name="website" value="<?php echo $bankinfo['website'] ?>">
 
-        <input class="submit a1" type="submit" value="Update" name="update">
-    </form>
-    <?php
+                    <input class="submit a1" type="submit" value="Update" name="update">
+                </form>
+        <?php
             }
         }
     } else { ?>
-    <form class="form bankDetails" action="process_bankdetails.php" method="post">
-        Serial No. <input type="text" value="autocomplete" disabled>
-        BloodBankName <input type="text" name="bloodbankname">
-        Contact<input type="text" name="contact">
-        location<input type="text" name="location">
-        website<input type="text" name="website">
-        <input class="submit a1" type="submit" value="submit" name="newsubmit">
-    </form>
+        <form class="form bankDetails" action="process_bankdetails.php" method="post">
+            Serial No. <input type="text" value="autocomplete" disabled>
+            BloodBankName <input type="text" name="bloodbankname">
+            Contact<input type="text" name="contact">
+            location<input type="text" name="location">
+            website<input type="text" name="website">
+            <input class="submit a1" type="submit" value="submit" name="newsubmit">
+        </form>
     <?php } ?>
 
 </div>
@@ -75,7 +75,12 @@ require_once("../leftnavitemsn.php");
                     <th style="width:65px;"></th>
                 </tr>
             </thead>
-
+            <style>
+                tr td:first-child::before {
+                    counter-increment: Serial;
+                    content: "  "counter(Serial)".";
+                }
+            </style>
             <?php
             require_once('../connect.php');
 
@@ -85,36 +90,35 @@ require_once("../leftnavitemsn.php");
             if ($num > 0) {
                 while ($bankinfo = mysqli_fetch_array($getbankqueryfire)) {
             ?>
-            <tr>
-                <td>
-                    <?php echo $bankinfo['id'] ?>
-                </td>
-                <td>
-                    <?php echo $bankinfo['BloodbankName'] ?>
+                    <tr>
+                        <td>
 
-                </td>
-                <td>
-                    <?php echo $bankinfo['Location'] ?>
-                </td>
-                <td>
+                        </td>
+                        <td>
+                            <?php echo $bankinfo['BloodbankName'] ?>
 
-                    <?php echo $bankinfo['Contact'] ?>
-                </td>
-                <td>
+                        </td>
+                        <td>
+                            <?php echo $bankinfo['Location'] ?>
+                        </td>
+                        <td>
 
-                    <a href="" style=" font-size: 15px;letter-spacing: 0.08px;">
-                        <?php echo $bankinfo['website'] ?>
-                    </a>
-                </td>
-                <td>
-                    <a href="changebankdetails.php?id=<?= $bankinfo['id'] ?>" class="submit edit" id="edit">Edit</a>
-                </td>
-                <td><a href="changebankdetails.php?del_id=<?= $bankinfo['id'] ?>" class="submit delete" name="delete"
-                        id="delete">Delete</a>
+                            <?php echo $bankinfo['Contact'] ?>
+                        </td>
+                        <td>
 
-                </td>
+                            <a href="" style=" font-size: 15px;letter-spacing: 0.08px;">
+                                <?php echo $bankinfo['website'] ?>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="changebankdetails.php?id=<?= $bankinfo['id'] ?>" class="submit edit" id="edit">Edit</a>
+                        </td>
+                        <td><a href="changebankdetails.php?del_id=<?= $bankinfo['id'] ?>" class="submit delete" name="delete" id="delete">Delete</a>
 
-            </tr>
+                        </td>
+
+                    </tr>
 
             <?php }
             } ?>
@@ -124,9 +128,9 @@ require_once("../leftnavitemsn.php");
     </div>
 </div>
 <script>
-var edit = document.getElementById('edit')
+    var edit = document.getElementById('edit')
 
-function editer() {
-    document.getElementById("edit").innerHTML = "asd";
-}
+    function editer() {
+        document.getElementById("edit").innerHTML = "asd";
+    }
 </script>

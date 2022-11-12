@@ -48,8 +48,6 @@ require_once("./template/central.php");
                     margin: auto 2rem 0.25rem 0rem;
                 }
             }
-
-          
             </style>
             <div class="userInfo"><a>
                     <div>Donation made
@@ -98,7 +96,7 @@ require_once("./template/central.php");
             <div class="userInfo"><a>
                     <div>Rejected Request
                         <hr>
-                        <div class="userdata"><?php $query = "SELECT * FROM `requestedblood`  where action='approved' and  user_id='$_SESSION[user_id]'";
+                        <div class="userdata"><?php $query = "SELECT * FROM `requestedblood`  where action='declined' and  user_id='$_SESSION[user_id]'";
                                                 $queryfire = mysqli_query($con, $query);
                                                 $rows = mysqli_num_rows($queryfire);
                                                 echo $rows;

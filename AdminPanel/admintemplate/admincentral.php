@@ -1,259 +1,276 @@
-<div class="body">
-    <div class="nav">
-        <ul class="navi" style="height:3.2em;">
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
 
-            <li><a href="adminDashboard.php"><img src="./Beige Pink Simple Professional Facebook Profile Picture.png" alt="" srcset="" height=100px style="height:50px; border-radius:50%;">Blood For Nepal</a>
-            </li>
-            <li>
-                <marquee direction="" bgcolor="#d61b1b" scrolldelay=99 style="color: white;width:40em;">
-                    <pre style="padding-top: 28px;"> One Blood Donation can Save up to Three Lives            sd</pre>
-                </marquee>
-            </li>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
+<body>
+
+    <div class="body">
+        <div class="nav">
+            <ul class="navi" style="height:3.2em;">
+
+                <li><a href="adminDashboard.php"><img
+                            src="./Beige Pink Simple Professional Facebook Profile Picture.png" alt="" srcset=""
+                            height=100px style="height:50px; border-radius:50%;">Blood For Nepal</a>
+                </li>
+                <li>
+                    <marquee direction="" bgcolor="#d61b1b" scrolldelay=99 style="color: white;width:40em;">
+                        <pre
+                            style="padding-top: 28px;"> One Blood Donation can Save up to Three Lives            sd</pre>
+                    </marquee>
+                </li>
+
+            </ul>
+            <hr>
+            <ul class=" navimenu" style="height: 51.9px;">
+                <a href="adminDashboard.php">
+                    <li> Home</li>
+                </a> <a href="./adminContact.php">
+                    <li>Contact</li>
+                </a> <a href="http://">
+                    <li>Aboout Us</li>
+                </a>
+                <a href="http://">
+                    <li>What we did?<i class="bi bi-megaphone-fill"></i></li>
+                </a>
+                <a href="../dashboard.php">
+                    <?php session_destroy();?>
+                    <li>Log Out</li>
+                </a>
+        </div>
         </ul>
         <hr>
-        <ul class=" navimenu" style="height: 51.9px;">
-            <a href="adminDashboard.php">
-                <li> Home</li>
-            </a> <a href="./adminContact.php">
-                <li>Contact</li>
-            </a> <a href="http://">
-                <li>Aboout Us</li>
-            </a>
-            <a href="http://">
-                <li>What we did?<i class="bi bi-megaphone-fill"></i></li>
-            </a>
-            <a href="./template/logout.php">
-                <li>Log Out</li>
-            </a>
+
     </div>
-    </ul>
-    <hr>
+    <?php ?>
+    <style>
+        * {
+            font-family: cursive;
+        }
 
-</div>
+        .navimenu a li {
 
-<style>
-    * {
-        font-family: cursive;
-    }
+            padding: 10px;
+            font-size: 24px;
+        }
 
-    .navimenu a li {
+        .navimenu a li:hover {
+            background-color: #ff6a56;
+        }
 
-        padding: 10px;
-        font-size: 24px;
-    }
+        .navimenu a li:active {
+            background-color: #ff6a56;
+        }
 
-    .navimenu a li:hover {
-        background-color: #ff6a56;
-    }
-
-    .navimenu a li:active {
-        background-color: #ff6a56;
-    }
-
-    .navi li a {
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 32px;
-        line-height: 0.9;
-        letter-spacing: 3.46px;
-        font-weight: 700;
-    }
+        .navi li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 32px;
+            line-height: 0.9;
+            letter-spacing: 3.46px;
+            font-weight: 700;
+        }
 
 
 
-    .navimenu a {
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 32px;
-        line-height: 1.3;
+        .navimenu a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 32px;
+            line-height: 1.3;
 
 
-    }
+        }
 
-    .navimenu {
-        display: flex;
-        justify-content: end;
+        .navimenu {
+            display: flex;
+            justify-content: end;
 
-    }
-</style>
-<div>
+        }
+    </style>
+    <div>
 
-    <div class=" main-content">
+        <div class=" main-content">
 
-        <style>
-            .main-content {
-                margin: 0vw 6vw;
+            <style>
+                .main-content {
+                    margin: 0vw 6vw;
 
-            }
+                }
 
-            * {
-                margin: 0px;
-                padding: 0px;
-                font-size: 20px;
-                letter-spacing: 0.5px;
-                box-sizing: border-box;
-                font-family: sans-serif;
-                text-decoration: none;
+                * {
+                    margin: 0px;
+                    padding: 0px;
+                    font-size: 20px;
+                    letter-spacing: 0.5px;
+                    box-sizing: border-box;
+                    font-family: sans-serif;
+                    text-decoration: none;
 
-            }
+                }
 
-            /*
+                /*
 .body {
 background: url(./web\ background.png)
 }*/
 
 
 
-            .navi {
+                .navi {
 
-                background: #d61b1b;
-                padding: 8px;
-
-
-            }
-
-            .navimenu {
-                background: #d61b1b;
-            }
-
-            li {
-                list-style-type: none;
-            }
-
-            .navi li,
-            .navimenu li {
-                /*  margin: 5px;*/
-                float: left;
-            }
+                    background: #d61b1b;
+                    padding: 8px;
 
 
-            /*left container*/
-            .main-content {
-                display: flex;
+                }
 
-            }
+                .navimenu {
+                    background: #d61b1b;
+                }
 
-            .left-content {
-                margin: 0px;
-                padding: 0px;
-            }
+                li {
+                    list-style-type: none;
+                }
 
-            .left-content-items {
-                display: block;
-            }
-
-            .left-content-items li {
-                border-bottom: 2px solid #ff6a56;
-                padding: 0.75rem 4rem;
-            }
-
-            .left-content-items a {
-                text-decoration: underline 1.5px #00506a;
-                color: #ffffff;
-            }
-
-            .left-content-items a li:hover {
-                background-color: #ff6a56;
-            }
-
-            .right-content {
-                color: #00506a;
-            }
-
-            .countbloods {
-                text-align: center;
-            }
-
-            .wrapper {
-                display: flex;
+                .navi li,
+                .navimenu li {
+                    /*  margin: 5px;*/
+                    float: left;
+                }
 
 
-            }
+                /*left container*/
+                .main-content {
+                    display: flex;
 
-            .wrap {
+                }
 
-                margin-right: 0.1rem;
+                .left-content {
+                    margin: 0px;
+                    padding: 0px;
+                }
 
-                width: 160px;
-            }
+                .left-content-items {
+                    display: block;
+                }
 
-            .available-bloods,
-            .donateblood,
-            .reqblood,
-            .bloodbank {
-                cursor: context-menu;
+                .left-content-items li {
+                    border-bottom: 2px solid #ff6a56;
+                    padding: 0.75rem 4rem;
+                }
 
-                border-top-right-radius: 20px;
+                .left-content-items a {
+                    text-decoration: underline 1.5px #00506a;
+                    color: #ffffff;
+                }
 
-            }
+                .left-content-items a li:hover {
+                    background-color: #ff6a56;
+                }
 
-            .available-bloods,
-            .donateblood,
-            .reqblood,
-            .bloodbank,
-            .details {
+                .right-content {
+                    color: #00506a;
+                }
 
-                max-width: 880rem;
-                padding: 0.5rem;
-            }
+                .countbloods {
+                    text-align: center;
+                }
 
-            .wrap a {
-                color: white;
-                text-decoration: underline;
-            }
-
-            .details {
-                background-color: rgba(90, 94, 85, 0.778);
-                padding: 0.5rem;
-                background-color: #002534;
-                border-top-right-radius: 0px;
+                .wrapper {
+                    display: flex;
 
 
-            }
+                }
 
-            .available-bloods {
-                background-color: #bf5600;
-            }
+                .wrap {
 
-            .donateblood {
-                background-color: #EB0000;
-            }
+                    margin-right: 0.1rem;
 
-            .reqblood {
-                background-color: #098800;
+                    width: 160px;
+                }
 
-            }
+                .available-bloods,
+                .donateblood,
+                .reqblood,
+                .bloodbank {
+                    cursor: context-menu;
 
-            .bloodbank {
-                background-color: #00506a;
-            }
+                    border-top-right-radius: 20px;
 
-            .dashboard {
-                padding: 0.75rem 1rem 1rem 0rem;
-            }
+                }
 
-            h1 {
-                font-size: 2rem;
-            }
+                .available-bloods,
+                .donateblood,
+                .reqblood,
+                .bloodbank,
+                .details {
 
-            .submit {
-                padding: 3px;
-                background-color: #00ae0f;
-                border-radius: 8px;
-            }
+                    max-width: 880rem;
+                    padding: 0.5rem;
+                }
 
-            .edit {
-                background-color: rgb(26, 136, 209);
-                font-size: medium;
-                color: #ffffff;
+                .wrap a {
+                    color: white;
+                    text-decoration: underline;
+                }
 
-            }
+                .details {
+                    background-color: rgba(90, 94, 85, 0.778);
+                    padding: 0.5rem;
+                    background-color: #002534;
+                    border-top-right-radius: 0px;
 
-            .delete {
-                background-color: #ff0000;
-                font-size: medium;
-                color: #ffffff;
 
-            }
-        </style>
+                }
+
+                .available-bloods {
+                    background-color: #bf5600;
+                }
+
+                .donateblood {
+                    background-color: #EB0000;
+                }
+
+                .reqblood {
+                    background-color: #098800;
+
+                }
+
+                .bloodbank {
+                    background-color: #00506a;
+                }
+
+                .dashboard {
+                    padding: 0.75rem 1rem 1rem 0rem;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                }
+
+                .submit {
+                    padding: 3px;
+                    background-color: #00ae0f;
+                    border-radius: 8px;
+                }
+
+                .edit {
+                    background-color: rgb(26, 136, 209);
+                    font-size: medium;
+                    color: #ffffff;
+
+                }
+
+                .delete {
+                    background-color: #ff0000;
+                    font-size: medium;
+                    color: #ffffff;
+
+                }
+            </style>

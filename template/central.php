@@ -35,9 +35,9 @@
             <hr>
             <ul class=" navimenu" style="height: 51.9px;">
 
-                <a href="../dashboard.php">
+                <a href="../Admin/dashboard.php">
                     <li>Home</li>
-                </a> <a href="./template/contact.php">
+                </a> <a href="../Admin/contact.php">
                     <li>Contact</li>
                 </a> <a href="http://">
                     <li>Aboout Us</li>
@@ -45,9 +45,17 @@
                 <a href="http://">
                     <li>What we did?<i class="bi bi-megaphone-fill"></i></li>
                 </a>
-                <a href="./template/logout.php">
-                    <li>Log Out</li>
+                <?php
+                if ((!isset($_SESSION['loggedin'])) || ($_SESSION['loggedin'] == false)) {
+                    echo "<a href='../Admin/login/login.php' '><li>Login";
+                } else {
+                    echo "  <a href='../Admin/template/logout.php' ><li>Log out";
+                } ?></li>
                 </a>
+                <script>
+
+
+                </script>
         </div>
         </ul>
         <hr>

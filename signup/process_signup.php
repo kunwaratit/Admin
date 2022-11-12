@@ -5,12 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fname = $_POST['firstname'];
     $lname = $_POST['lastname'];
     $address = $_POST['address'];
-    $dob = $_POST['DateOfBirth'];
     $phone = $_POST['phoneno'];
     $bloodgroup = $_POST['bloodGroup'];
-    $weight = $_POST['weight'];
     $sex = $_POST['sex'];
-    $age = $_POST['age'];
     $profile = $_POST['profile'];
     $cover = $_POST['cover'];
     $password = $_POST['password'];

@@ -2,13 +2,12 @@
 
 <div class="left-content"
     style="margin-top:-1px;border-radius:12px; display: flex; flex-direction: column; align-items: center; background: #d61b1b; height:fit-content;">
-
     <?php
     if ((!isset($_SESSION['loggedin'])) || ($_SESSION['loggedin'] == false)) {
         echo "<style> .user-status-wrapper{
         display:none;    
     } </style> ";
-        echo "you are not logged in ?";
+        
     } else {
         echo "<style> .login-wrapper{
             display:none;    
@@ -80,21 +79,26 @@
         <div>
 
             <div class="login-wrapper">
-                <h1> <a href="../Admin/signup/signup.php"> WANT TO DONATE? <br> Signup</a></h1>
-                <div class="signup-container"
-                    style="background:white; border:1px solid black ; width:fit-content; padding: 10px; display:flex;margin:auto">
+
+                <div class="signup-container" style="width:fit-content; padding: 10px; display:flex;">
                     <form action="../Admin/login/process_login.php" method="POST">
-                        <h2 style="text-align:center; text-decoration: underline;"> Login</h2>
-                        <br><span class="log"> UserId- </span><br><input type="text" name="entered_id"
-                            placeholder="UserId" title="userid/number/email">
-                        <br><span class="log"> Password</span><br><input type="password" name="entered_pass"
-                            placeholder="Password" title="password"><br>
-                        <input class="submit" type="submit" value="Submit">
+                        <h2 style="text-align:center; text-decoration: underline;"> Login Form</h2>
+                        <span class="log"> UserId- </span><br>
+                        <input type="text" name="entered_id" placeholder="UserId" title="userid/number/email">
+                        <br><span class="log"> Password</span><br>
+                        <input type="password" name="entered_pass" placeholder="Password" title="password"><br><br>
+                        <input class="submit b1" type="submit" value="Log in"
+                            style="width: 45%; margin-right:5%; background:white;color:red; "><a
+                            href="../Admin/signup/signup.php"><input class="submit" type="button" value="Signup"
+                                style="width: 45%; background:white;color:red;"></a>
                     </form>
                     <style>
-                        .log {
-                            color: aqua;
+                        .b1:hover {
+                            background: rgb(136, 135, 135) important;
                         }
+                    </style>
+                    <style>
+
                     </style>
                 </div>
             </div>

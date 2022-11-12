@@ -109,7 +109,7 @@
             }
 
             .details {
-                background-color: rgba(90, 94, 85, 0.778);
+                background-color: rgba(32, 32, 31, 0.778);
                 padding: 0.5rem;
                 border-bottom-left-radius: 10px;
                 border-bottom-right-radius: 10px;

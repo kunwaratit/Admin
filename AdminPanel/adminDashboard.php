@@ -1,6 +1,7 @@
 <?php
 require_once("./admintemplate/admincentral.php");
-require_once("../leftnavitemsn.php"); ?>
+require_once("../leftnavitemsn.php");
+?>
 <style>
 
 </style>
@@ -33,7 +34,9 @@ require_once("../leftnavitemsn.php"); ?>
                 </a></span>
         </div>
         <?php }
-        } ?>
+        }
+
+        ?>
         <style>
         .content-available-banks {
             /* border: 2px solid red*/
