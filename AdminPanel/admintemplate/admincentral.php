@@ -31,14 +31,15 @@
             <ul class=" navimenu" style="height: 51.9px;">
                 <a href="adminDashboard.php">
                     <li> Home</li>
-                </a> <a href="./adminContact.php">
-                    <li>Contact</li>
                 </a> <a href="http://">
                     <li>Aboout Us</li>
                 </a>
+                <!--   </a> <a href="./adminContact.php">
+                    <li>Contact</li>
+                
                 <a href="http://">
                     <li>What we did?<i class="bi bi-megaphone-fill"></i></li>
-                </a>
+                </a>-->
                 <a href="../dashboard.php">
                     <?php session_destroy();?>
                     <li>Log Out</li>

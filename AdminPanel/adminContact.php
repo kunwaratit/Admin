@@ -137,7 +137,8 @@ require_once("./admintemplate/admincentral.php");
 <div style="margin-left: 20%;">
 
     <div class="container-contact100">
-        <div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+        <div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422"
+            data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
         <div class="wrap-contact100">
             <div class="contact100-form-title" style="background-image: url(images/bg-01.jpg)">
                 <span class="contact100-form-title-1" style="font-size: 32px;"> Contact Us </span>
@@ -153,8 +154,9 @@ require_once("./admintemplate/admincentral.php");
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                     <span class="label-input100">Email:</span>
-                    <input class="input100" type="text" name="email" placeholder="Enter email addess" />
+                    <input class="input100" type="email" name="email" placeholder="Enter email addess" />
                     <span class="focus-input100"></span>
+
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Phone is required">
                     <span class="label-input100">Phone:</span>

@@ -23,13 +23,13 @@ require_once("../leftnavitemsn.php");
 
             <span name="bankname" id="bankname">
                 <h3>
-                    <?php echo $bloodgroupinfo['Group Name'] ?>
+                    <?php echo $bloodgroupinfo['GroupName'] ?>
                 </h3>
             </span><br>
-            <span id="bankaddress">
-                <?php echo $bloodgroupinfo['unit'] ?>
+            <span id="banktel">
+                <a> Available:<?php echo $bloodgroupinfo['unit'] ?>ml.</a>
             </span><br>
-            <span id="banktel"><a href="tel:<?php echo $bloodgroupinfo['vol'] ?>">
+            <span id="banktel"><a href="">
                     <?php echo $bloodgroupinfo['vol'] ?>
                 </a></span>
         </div>

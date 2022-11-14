@@ -14,7 +14,7 @@ require_once("leftnavitems.php");
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="background-color: rgba(255, 0, 0, 0.76);">
         <?php
 
         if (isset($_POST['submit'])) {
@@ -60,18 +60,24 @@ Hospital : ' . $_POST['hospital'], 'source' => $fb->fileToUpload($_FILES['file']
         <div class="row">
             <div class="col-md-6 col-md-offset-2">
                 <form method="post" enctype="multipart/form-data">
-
+                    <style>
+                        .col-md-6 form .form-group input[type=text] {
+                            margin: 2px;
+                        }
+                    </style>
                     <div class="form-group">
                         <label for="message-text" class="control-label">Patient Name:<br></label>
-                        <input type="text" id="msg" name="name" required> <br>
-                        Current Location<br><input type="text" name="currentlocation" required><br>
-                        Contact<br> <input type="text" name="contact1" required><br>
-                        Hospital<br><input type="text" name="hospital" required><br>
-                        Blood Group<br> <select name="bloodgroup" required>
+                        <input type="text" id="msg" name="name" placeholder="Patient Name" required> <br>
+                        Current Location<br><input type="text" name="currentlocation" placeholder="Location"
+                            required><br>
+                        Contact<br> <input type="text" name="contact1" placeholder="Contact" required><br>
+                        Hospital<br><input type="text" name="hospital" placeholder="Hospital" required><br>
+                        Blood Group<br> <select name="bloodgroup" required style="background-color: black;">
                             <option value="O-">O-</option>
                             <option value="O+">O+</option>
                             <option value="A-">A-</option>
                             <option value="A+">A+</option>
+                            <option value="B-">B-</option>
                             <option value="B+">B+</option>
                             <option value="AB-">AB-</option>
                             <option value="AB+">AB+</option>

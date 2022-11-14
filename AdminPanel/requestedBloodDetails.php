@@ -79,9 +79,15 @@ tr td:first-child::before {
         if (isset($_GET['approve_id'])) {
             $query = "UPDATE  requestedblood set action='approved' where pid=$_GET[approve_id]";
             $queryfire = mysqli_query($con, $query);
+
+            $query = "SELECT bloodGroup,unit FROM `requestedblood`where pid=$_GET[approve_id]";
+            $queryfire = mysqli_query($con, $query);
+            $usersq = mysqli_fetch_array($queryfire);
+            $querys = "UPDATE `bloodgroup` SET unit=unit-$usersq[unit] WHERE GroupName='$usersq[bloodGroup]'";
+            $querysfire = mysqli_query($con, $querys);
         }
         if (isset($_GET['decline_id'])) {
-            $sql = "UPDATE  requestedblood set action='declined' where pid=$_GET[decline_id]";
+            $sql = "UPDATE requestedblood set action='declined' where pid=$_GET[decline_id]";
             $sqlfire = mysqli_query($con, $sql);
         }
         if (isset($_GET['edit_id'])) {

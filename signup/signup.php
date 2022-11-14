@@ -22,7 +22,7 @@
     input[type=submit],
     input[type=email] {
         border-radius: 5px;
-        background-color: ;
+
         color: #d61b1b;
         padding: 14px 20px;
         margin: 8px 0px;
@@ -60,6 +60,7 @@
             <option value="O+">O+</option>
             <option value="A-">A-</option>
             <option value="A+">A+</option>
+            <option value="B-">B-</option>
             <option value="B+">B+</option>
             <option value="AB-">AB-</option>
             <option value="AB+">AB+</option>

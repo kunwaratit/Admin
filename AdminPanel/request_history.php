@@ -7,10 +7,10 @@ require_once("../leftnavitemsn.php"); ?>
 
 
 <style>
-tr td:first-child::before {
-    counter-increment: Serial;
-    content: "  "counter(Serial)".";
-}
+    tr td:first-child::before {
+        counter-increment: Serial;
+        content: "  "counter(Serial)".";
+    }
 </style>
 
 <div class="tables">
@@ -53,41 +53,40 @@ tr td:first-child::before {
             while ($reqbloodinfo = mysqli_fetch_array($getreqbloodqueryfire)) {
         ?>
 
-        <tr>
+                <tr>
 
-            <td>
+                    <td>
 
 
-            </td>
-            <td>
-                <?php echo $reqbloodinfo['patientname'] ?>
-            </td>
-            <td>
+                    </td>
+                    <td>
+                        <?php echo $reqbloodinfo['patientname'] ?>
+                    </td>
+                    <td>
 
-                <?php echo $reqbloodinfo['currentlocation'] ?>
-            </td>
-            <td>
+                        <?php echo $reqbloodinfo['currentlocation'] ?>
+                    </td>
+                    <td>
 
-                <?php echo $reqbloodinfo['contact'] ?>
-            </td>
-            <td>
+                        <?php echo $reqbloodinfo['contact'] ?>
+                    </td>
+                    <td>
 
-                <?php echo $reqbloodinfo['hospital'] ?>
-            </td>
-            <!-- <td>
+                        <?php echo $reqbloodinfo['hospital'] ?>
+                    </td>
+                    <!-- <td>
 
                 <?php //echo $reqbloodinfo['patientreport'] 
                 ?>
             </td>-->
-            <td>
-                <a href=""><input type="submit" value="<?php echo $reqbloodinfo['action']; ?>"
-                        id="status_<?php echo $reqbloodinfo['action']; ?>" class="submit edit"></a>
-            </td>
-            <style>
+                    <td>
+                        <a href=""><input type="submit" value="<?php echo $reqbloodinfo['action']; ?>" id="status_<?php echo $reqbloodinfo['action']; ?>" class="submit edit"></a>
+                    </td>
+                    <style>
 
-            </style>
+                    </style>
 
-        </tr>
+                </tr>
 
         <?php }
         } ?>

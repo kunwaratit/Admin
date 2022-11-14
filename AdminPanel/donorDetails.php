@@ -21,7 +21,7 @@ tr td:first-child::before {
 
             <th style="width:100px;">Unit</th>
 
-            <th>Last Donated</th>
+
             <th>Status</th>
 
         </thead>
@@ -47,7 +47,7 @@ tr td:first-child::before {
             <td><?php echo $queryfetch['bloodGroup'] ?></td>
             <td><?php echo $queryfetch['total_times'] ?><span style="font-size:9px ;">times </span> </td>
             <td><?php echo $queryfetch['total_times'] * 450 ?><span style="font-size:9px ;">ml.</span></td>
-            <td><?php echo $queryfetch['last_donated'] ?></td>
+
 
             <td>
                 <input type="submit" value="Active" class="submit edit" id="accept">

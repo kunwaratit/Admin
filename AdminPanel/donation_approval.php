@@ -8,18 +8,27 @@ if (isset($_GET['action'])) {
         $query = "UPDATE  donationrequest set action='approved' where id=$_GET[id]";
         $queryfire = mysqli_query($con, $query);
 
+
+
         $query = "SELECT * FROM `donordetails`where user_id='$_GET[userid]'";
         $queryfire = mysqli_query($con, $query);
         $users = mysqli_fetch_array($queryfire);
         $count = mysqli_num_rows($queryfire);
 
         if ($count == 0) {
+
+
             $sql = "INSERT into  donordetails (`user_id`,`total_times`) VALUES ('$_GET[userid]','1')";
             $sqlfire = mysqli_query($con, $sql);
         } else {
             $sql = "UPDATE  donordetails set total_times=total_times+1  where user_id='$_GET[userid]'";
             $sqlfire = mysqli_query($con, $sql);
         }
+        $query = "SELECT bloodGroup FROM `userprofile`where user_id='$_GET[userid]'";
+        $queryfire = mysqli_query($con, $query);
+        $usersq = mysqli_fetch_array($queryfire);
+        $querys = "UPDATE `bloodgroup` SET unit=unit+450 WHERE GroupName='$usersq[bloodGroup]'";
+        $querysfire = mysqli_query($con, $querys);
     } else if (($_GET['action']) == "decline") {
         $query = "UPDATE  donationrequest set action='declined' where id=$_GET[id]";
         $queryfire = mysqli_query($con, $query);
@@ -28,6 +37,44 @@ if (isset($_GET['action'])) {
     }
 }
 ?>
+<!--<div class="row">
+    
+    
+
+        <form class=" form bankDetails" action="process_bankdetails.php" method="post">
+        Serial No. <input type="text" name="updateid" value="">
+    BloodBankName <input type="text" name="bloodbankname" value="<?php //echo $bankinfo['BloodbankName'] 
+                                                                    ?>">
+    Contact<input type="text" name="contact" value="<?php //echo $bankinfo['Contact'] 
+                                                    ?>">
+    location<input type="text" name="location" value="<?php //echo $bankinfo['Location'] 
+                                                        ?>">
+    website<input type="text" name="website" value="<?php //echo $bankinfo['website'] 
+                                                    ?>">
+
+    <input class="submit a1" type="submit" value="Update" name="update">
+    </form>
+
+    }
+
+    ?>
+    <form class="form bankDetails" action="" method="post">
+        Serial No. <input type="text" value="autocomplete" disabled>
+        Full Name <input type="text" name="fullname">
+        Contact<input type="text" name="contact">
+        Location<input type="text" name="location">
+        Blood Group<input type="text" name="bloodgroup">
+        <input class="submit a1" type="submit" value="submit" name="newsubmit">
+    </form>
+
+
+</div>
+
+
+-->
+
+
+
 <div class="tables">
     <h1> Donation Approval</h1>
 
@@ -192,6 +239,10 @@ if (isset($_GET['action'])) {
             </div>
         </div>
     </div>
+
+
+
+
     <table class="dashtable">
         <thead>
             <th style="width:47px;">S.N</th>
@@ -240,8 +291,11 @@ if (isset($_GET['action'])) {
                 <a href="donation_approval.php?action=decline&id=<?php echo $queryfetch['id']; ?>"> <input type="submit"
                         value="Decline" class="submit delete" id="delete">
                 </a>
-                <a href="donation_approval.php?action=edit&id=<?php echo $queryfetch['id']; ?>">
-                    <img src="./admintemplate/edit.png" height="25px"></a>
+                <!--  <a
+                    href="donation_approval.php?edit_id=<?php // echo $queryfetch['id']; 
+                                                        ?>&userid=<?php //echo $queryfetch['user_id']; 
+                                                                                                    ?>">
+                    <img src="./admintemplate/edit.png" height="25px"></a>-->
             </td>
 
         </tr>
